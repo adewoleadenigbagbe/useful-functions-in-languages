@@ -71,6 +71,8 @@ b := math.MinInt // MinInt32 or MinInt64 depending on intSize.
 
 C#
 ```
+using System;
+
 var a = Math.Abs(-4.7) // a = 4.7
 
 var a = Math.Ceil(0.60) // a = 1
