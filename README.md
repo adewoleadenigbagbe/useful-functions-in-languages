@@ -66,7 +66,7 @@ g := math.Round(-2.51); // f = -3
 a := math.Pow(4,3) // a = 64
 
 a := math.MaxInt // MaxInt32 or MaxInt64 depending on intSize.
-b := MinInt // MinInt32 or MinInt64 depending on intSize.
+b := math.MinInt // MinInt32 or MinInt64 depending on intSize.
 ```
 
 C#
