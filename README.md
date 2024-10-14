@@ -105,4 +105,51 @@ var a = Int32.MIN_VALUE // a = -2147483648
 var b = Int32.MAX_VALUE // b = 2147483647
 ```
 
+##
+Strings
+---
+
+Js
+```
+Length
+let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+let l = text.length; // l = 26
+
+String Extraction
+substring(indexStart) , substring(indexStart, indexEnd)
+let a = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".substring(0,1) // a = A
+let b = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".substring(0,6) // b = ABCDEF
+
+Contains
+let a = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".includes("A") // a = true
+let b = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".includes("1") // b = false
+
+Lookup String index
+let a = "I think Ruth's dog is cuter than your dog!".indexOf('dog') // a = 15
+let b = "I think Ruth's dog is cuter than your dog!".lastIndexOf('dog') // b = 38
+
+Replace
+let a = "I think Ruth's dog is cuter than your dog!".replace("dog",'cat') // a = I think Ruth's cat is cuter than your dog!
+let b = "I think Ruth's dog is cuter than your dog!".replaceAll("dog",'cat') // b = I think Ruth's cat is cuter than your cat!
+
+Splitting
+let a = 'The quick brown fox jumps over the lazy dog.'.split(' ') // a[0] = "The"
+
+Concatenation
+let a = "Hello".concat(' ',"Mya") // a = "Hello Mya"
+
+Trimming
+let a = '   Hello world!   '.trim() // a = "Hello World"
+let b = '   Hello world!   '.trimStart() // b = "Hello world!   "
+let c = '   Hello world!   '.trimEnd() // c = "   Hello world!"
+
+Uppercase/Lowercase
+let a = 'The quick brown fox jumps over the lazy dog.'.toUpperCase() // a = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG."
+let b = 'The quick brown fox jumps over the lazy dog.'toLowerCase() // b = "the quick brown fox jumps over the lazy dog."
+
+Repeat
+let a = 'Happy! '.repeat(3) // a = Happy! Happy! Happy! 
+
+```
+
 
