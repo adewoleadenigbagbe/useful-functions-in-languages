@@ -154,6 +154,7 @@ let a = 'Happy! '.repeat(3) // a = Happy! Happy! Happy!
 
 Go
 ```
+import "strings"
 Length
 a := len("abc") // a = 3
 
@@ -190,6 +191,47 @@ e := strings.ToLower("Gopher") // d = gopher
 
 Repeat
 s := strings.Repeat("na", 2) // s = nana
+```
+
+C#
+```
+Length
+var text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+var l = text.Length; // l = 26
+
+String Extraction
+Substring(int startIndex,int length)
+var a = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".Substring(1,6) // a = BCDEFG
+var b = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".Substring(24) // b = YZ
+
+Contains
+var a = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".Contains("A") // a = true
+
+Lookup String index
+var a = "I think Ruth's dog is cuter than your dog!".IndexOf('d') // a = 15
+var b = "I think Ruth's dog is cuter than your dog!".LastIndexOf('d') // b = 38
+
+Replace
+var a = "I think Ruth's dog is cuter than your dog!".Replace("d",'c') // a = I think Ruth's cog is cuter than your cog!
+
+Splitting
+var a = 'The quick brown fox jumps over the lazy dog.'.Split(' ') // a[0] = "The"
+
+Concatenation
+var a = "Hello".Concat(" Mya") // a = "Hello Mya"
+var b = string.Join(" ", "Hello", "Hi", "Howdy"); // "Hello,Hi,Howdy"
+
+Trimming
+var a = '   Hello world!   '.Trim() // a = "Hello World"
+var b = '   Hello world!   '.TrimStart() // b = "Hello world!   "
+var c = '   Hello world!   '.TrimEnd() // c = "   Hello world!"
+
+Uppercase/Lowercase
+var a = 'The quick brown fox jumps over the lazy dog.'.ToUpper() // a = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG."
+var b = 'The quick brown fox jumps over the lazy dog.'ToLower() // b = "the quick brown fox jumps over the lazy dog."
+
+Repeat
+var a = Enumerable.Repeat("Happy", 3); //a = "Happy Happy Happy"
 ```
 
 
