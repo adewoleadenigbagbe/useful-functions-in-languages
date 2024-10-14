@@ -152,4 +152,44 @@ let a = 'Happy! '.repeat(3) // a = Happy! Happy! Happy!
 
 ```
 
+Go
+```
+Length
+a := len("abc") // a = 3
+
+String Extraction
+a := "World!" // a[0:2] = "Wo"
+
+Contains
+a := strings.Contains("seafood", "foo") // a = true
+
+Lookup String index
+a := strings.Index("chicken", "ken") // a = 4
+b := strings.LastIndex("go gopher", "go") // b = 3
+
+Replace
+a := strings.Replace("oink oink oink", "k", "ky", 2) // a = oinky oinky oink
+b := strings.Replace("oink oink oink", "oink", "moo", -1) // b = moo moo moo
+c := strings.ReplaceAll("oink oink oink", "oink", "moo") // c = moo moo moo
+
+Splitting
+s := strings.Split("a,b,c", ",") // s = ["a" "b" "c"]
+
+Concatenation
+c := "word" + "bible" // c = "Word bible"
+
+Trimming
+s : strings.TrimSpace(" \t\n Hello, Gophers \n\t\r\n") // s = Hello, Gophers
+x := strings.Trim("¡¡¡Hello, Gophers!!!", "!¡") // x = Hello, Gophers
+b := strings.TrimLeft("¡¡¡Hello, Gophers!!!", "!¡") // b = Hello, Gophers!!!
+a := strings.TrimRight("¡¡¡Hello, Gophers!!!", "!¡") // a = ¡¡¡Hello, Gophers
+
+Uppercase/Lowercase
+d := strings.ToUpper("Gopher") // d = GOPHER
+e := strings.ToLower("Gopher") // d = gopher
+
+Repeat
+s := strings.Repeat("na", 2) // s = nana
+```
+
 
