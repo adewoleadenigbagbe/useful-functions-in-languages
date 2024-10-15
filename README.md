@@ -237,7 +237,7 @@ var a = Enumerable.Repeat("Happy", 3); //a = "Happy Happy Happy"
 ##
 Array
 ---
-
+Js
 ```
 Check all item meets a condition
 let a = [1, 30, 39, 29, 10, 13].every((value) => value < 40) // a = true
@@ -294,6 +294,55 @@ let a = [1, 30, 39, 29, 10, 13,45,67].reverse();  // a = [67,45,13,10,29,39,30,1
 Transform
 let a = [1, 30, 39, 29, 10, 13,45,67].map((value) => value * 2);  // a = [2,60,78,58,20,26,90,134,1]
 
+```
+
+
+C#
+```
+Check all item meets a condition
+var a = new List<int>{1,2,3,4,5,6,7,8,9,10}.All(x => x > 7); // a = false
+
+Filter
+var a = new List<int>{1,2,3,4,5,6,7,8,9,10}.Where(x => x > 7); // a = [1,2,3,4,5,6]
+
+Find
+var a = new List<int>{1,2,3,4,5,6,7,8,9,10}.Find(x => x > 7); // a = 8
+
+FindIndex
+var index = new List<int>{1,2,3,4,5,6,7,8,9,10}.FindIndex(x => x > 7);  // index = 7
+
+ForEach
+var a = new List<int>{1,2,3,4,5,6,7,8,9,10}.ForEach(x => Console.Write(x));  // a = "1,2,3,4,5,6,7,8,9,10"
+
+Contains
+var a = new List<int>{1,2,3,4,5,6,7,8,9,10}.Contains(1);  // a = true
+
+Count
+var a = new List<int>{1,2,3,4,5,6,7,8,9,10}.Length;  // a = 10
+
+Add
+var a = new List<int>{1,2,3,4,5,6,7,8,9,10}.Add(9);  // a = [1, 30, 39, 29, 10, 13,45,67,9]
+
+Pop
+var a = new List<int>{1,2,3,4,5,6,7,8,9,10};  // a = [1, 30, 39, 29, 10, 13,45,67,9]
+var b = [1, 30, 39, 29, 10, 13,45,67]Remove(a[a.Length -1]);  // a = [1, 30, 39, 29, 10, 13,45]
+
+Any
+var a = new List<int>{1,2,3,4,5,6,7,8,9,10}.Any(x => value > 45);  // a = true
+var a = new List<int>{1,2,3,4,5,6,7,8,9,10}.Exist(x => value > 45);  // a = true
+
+
+Sort Ascending
+var a = new List<int>{1,2,3,4,5,6,7,8,9,10}.OrderBy(x => x);  // a = [1,2,3,4,5,6,7,8,9,10]
+
+Sort Descending
+var a = new List<int>{1,2,3,4,5,6,7,8,9,10}.OrderByDescending(x => x);  // a = [10, 9, 8, 7, 6, 5,4,3,2,1]
+
+Reverse
+var a = new List<int>{1,2,3,4,5,6,7,8,9,10}.Reverse();  // a = [67,45,13,10,29,39,30,1]
+
+Transform
+let a = [1, 30, 39, 29, 10, 13,45,67].Select(x => x * 2);  // a = [2,60,78,58,20,26,90,134,1]
 ```
 
 
