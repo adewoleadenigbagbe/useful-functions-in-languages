@@ -234,4 +234,66 @@ Repeat
 var a = Enumerable.Repeat("Happy", 3); //a = "Happy Happy Happy"
 ```
 
+##
+Array
+---
+
+```
+Check all item meets a condition
+let a = [1, 30, 39, 29, 10, 13].every((value) => value < 40) // a = true
+
+Filter
+let a = [1, 30, 39, 29, 10, 13,45,67].filter((value) => value < 40) // a = [45,67]
+
+Find
+let a = [1, 30, 39, 29, 10, 13,45,67].find((element) => element > 10);  // a = 30
+
+FindIndex
+let a = [1, 30, 39, 29, 10, 13,45,67].findIndex((element) => element == 10);  // a = 4
+
+ForEach
+let a = [1, 30, 39, 29, 10, 13,45,67].forEach((element) => console.log(element));  // a = "1, 30, 39, 29, 10, 13,45,67"
+
+Contains
+let a = [1, 30, 39, 29, 10, 13,45,67].includes(1);  // a = true
+
+Count
+let a = [1, 30, 39, 29, 10, 13,45,67].length;  // a = 8
+
+Add
+let a = [1, 30, 39, 29, 10, 13,45,67].push(9);  // a = [1, 30, 39, 29, 10, 13,45,67,9]
+
+Pop
+let a = [1, 30, 39, 29, 10, 13,45,67].pop();  // a = [1, 30, 39, 29, 10, 13,45]
+
+Slice - create shallow copy
+let a = [1, 30, 39, 29, 10, 13,45,67].slice(2,4);  // a = [39, 29]
+let a = [1, 30, 39, 29, 10, 13,45,67].slice(2);  // a = [39, 29, 10, 13,45,67]
+
+Splice - Remove/update original Array
+splice(insertIndex,deletecount,itemToAdd)
+Remove
+let a = ['Jan', 'March', 'April', 'June'].splice(2,1); // a = ["Jan", "March", "June"]
+Update
+let a = ['Jan', 'March', 'April', 'June'].splice(3,1,"May"); // a = ["Jan", "March", "April", "May"]
+Insert at index
+let a = ['Jan', 'March', 'April', 'June'].splice(1,0,"Feb"); // a = ["Jan", "Feb", "March", "April", "June"]
+
+Any
+let a = [1, 30, 39, 29, 10, 13,45,67].some((value) => value > 45);  // a = true
+
+Sort
+let a = [1, 30, 39, 29, 10, 13,45,67].sort();  // a = [1,10,13,29,30,39,45,67]
+
+Sort Descending
+let a = [1, 30, 39, 29, 10, 13,45,67].sort((a,b) => b - a);  // a = [67,45,39,30,29,13,10,1]
+
+Reverse
+let a = [1, 30, 39, 29, 10, 13,45,67].reverse();  // a = [67,45,13,10,29,39,30,1]
+
+Transform
+let a = [1, 30, 39, 29, 10, 13,45,67].map((value) => value * 2);  // a = [2,60,78,58,20,26,90,134,1]
+
+```
+
 
