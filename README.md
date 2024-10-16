@@ -417,4 +417,95 @@ Transform
 let a = [1, 30, 39, 29, 10, 13,45,67].Select(x => x * 2);  // a = [2,60,78,58,20,26,90,134,1]
 ```
 
+##
+Maps
+---
+
+Js
+```
+Add Key/Value
+const map1 = new Map();
+
+map1.set('a', 1); // {'a':1}
+
+Get Value
+let b = map1.get('a'); // b = 1
+
+Length
+let c = map.size(); // c = 1
+
+Remove
+map.delete('a') // delete key/val
+
+Key Exist
+map.has('a') // true
+
+Clear
+map.Clear()
+
+Foreach
+map.forEach((value,key,map) => console.log(`m[${key}] = ${value}`);)
+
+```
+
+Go
+```
+Add Key/Value
+m := map[string]int{"a": 1}
+m["b"] = 2
+
+Get Value
+let b = m["a"] // b = 1
+
+Length
+let c = len(m); // c = 1
+
+Remove
+delete('a') // delete key/val
+
+Key Exist
+val,ok := m["a"] // val = 1; ok = true
+
+Clear
+m = nil
+
+Foreach -- Note maps in golang are unordered
+for k, v := range m{
+    fmt.Printf("%s:%s", k,v)
+}
+
+```
+
+
+C#
+```
+Add Key/Value
+ var dic = new Dictionary<string, int>
+ {
+     ["a"] = 1,
+ };
+
+dic["b"] = 2 or dic.Add("b", 2);
+
+Get Value
+var dic = dic["a"] // b = 1
+
+Length
+var c = dic.Count; // c = 1
+
+Remove
+var isRemoved = dic.Remove("c") // isRemoved = true if key is present
+
+Key Exist
+var exist = dic.ContainsKey("a") // exist = true
+
+Clear
+dic.Clear()
+
+Foreach
+ foreach (var item in dic)
+ {
+     Console.WriteLine(item.Key);
+ }
+```
 
