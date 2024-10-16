@@ -461,7 +461,7 @@ Length
 let c = len(m); // c = 1
 
 Remove
-delete('a') // delete key/val
+delete(m,'a') // delete key/val
 
 Key Exist
 val,ok := m["a"] // val = 1; ok = true
