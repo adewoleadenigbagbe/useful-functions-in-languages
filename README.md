@@ -296,6 +296,74 @@ let a = [1, 30, 39, 29, 10, 13,45,67].map((value) => value * 2);  // a = [2,60,7
 
 ```
 
+Go
+```
+import "slices"
+import "sort"
+
+Add
+a := []int{1,2,3,4,5}
+a = append(6,a) // a = [1,2,3,4,5,6]
+
+Length
+a := []int{1,2,3,4,5}
+c := len(a) // c = 5
+
+Sort Ascending
+Integer Sorting
+a := []int{5,2,4,3,1}
+sort.Ints(s) // a = [1,2,3,4,5]
+
+String Sorting
+s := []string{"Go", "Bravo", "Gopher", "Alpha", "Grin", "Delta"}
+sort.Strings(s) // s = [Alpha Bravo Delta Go Gopher Grin]
+
+Sorting Slices
+people := []struct {
+		Name string
+		Age  int
+	}{
+		{"Gopher", 7},
+		{"Alice", 55},
+		{"Vera", 24},
+		{"Bob", 75},
+	}
+
+sort.Slice(people, func(i, j int) bool { return people[i].Name < people[j].Name }) // By name: [{Alice 55} {Bob 75} {Gopher 7} {Vera 24}]
+
+Custom Datastructure Sorting
+type Person struct {
+	Name string
+	Age  int
+}
+
+// ByAge implements sort.Interface based on the Age field.
+type ByAge []Person
+
+func (a ByAge) Len() int           { return len(a) }
+func (a ByAge) Less(i, j int) bool { return a[i].Age < a[j].Age }
+func (a ByAge) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+
+func main() {
+	family := []Person{
+		{"Alice", 23},
+		{"Eve", 2},
+		{"Bob", 25},
+	}
+	sort.Sort(ByAge(family))
+	fmt.Println(family) // [{Eve 2} {Alice 23} {Bob 25}]
+}
+
+// go1.22
+slices.Sort(a) // a = [1,2,3,4,5]
+
+Pop
+a := []int{1,2,3,4,5,6}
+a = a[:len(a)-1]
+
+
+// For there list function use "github.com/samber/lo". it has a great list of usable functions
+```
 
 C#
 ```
