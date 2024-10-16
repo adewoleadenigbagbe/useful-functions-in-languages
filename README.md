@@ -314,6 +314,10 @@ Integer Sorting
 a := []int{5,2,4,3,1}
 sort.Ints(s) // a = [1,2,3,4,5]
 
+Float Sorting
+s := []float64{5.2, -1.3, 0.7, -3.8, 2.6} // unsorted
+sort.Float64s(s) // a = [-3.8 -1.3 0.7 2.6 5.2]
+
 String Sorting
 s := []string{"Go", "Bravo", "Gopher", "Alpha", "Grin", "Delta"}
 sort.Strings(s) // s = [Alpha Bravo Delta Go Gopher Grin]
