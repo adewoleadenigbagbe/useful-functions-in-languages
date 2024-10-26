@@ -776,6 +776,12 @@ str := `This is a
 multiline
 string.`
 
+Interpolation
+name := "bob"
+age := 21
+message := fmt.Sprintf("%s is %d years old", name, age)
+fmt.Println(message)
+
 Concatenate with +
 text := "cat" + "dog"
 ```
@@ -797,5 +803,35 @@ string name = $"My full name is: {firstName} {lastName}";
 
 Concatenate with +
 var text = "cat" + "dog";
+```
+##
+Swapping
+---
+
+Js
+```
+let a = 'foo'
+let b = 'bar'
+console.log(a, b);
+
+[b, a] = [a, b]
+console.log(a, b);
+```
+
+Go
+```
+a := "foo"
+b := "bar"
+fmt.Println(a, b)
+
+b, a = a, b
+fmt.Println(a, b)s
+```
+
+C#
+```
+int a = 10;
+int b = 2;
+(a, b) = (b, a);
 ```
 
