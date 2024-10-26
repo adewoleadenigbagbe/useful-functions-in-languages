@@ -509,3 +509,293 @@ Foreach
  }
 ```
 
+## 
+Loops
+---
+
+Js
+```
+For Index Loop
+
+for (let i = 0; i <= 5; i++) {  // 0, 1, 2, 3, 4, 5
+  console.log(i)
+}
+
+For of Loop
+//You can loop through array/strings
+const cars = ["BMW", "Volvo", "Mini"];
+for (let x of cars) {
+  text += x;
+}
+
+For In Loop
+//Loop through Object
+const person = {fname:"John", lname:"Doe", age:25};
+for (let x in person) {
+  text += person[x];
+}
+
+
+While Loop
+let i = 0
+
+while (i <= 5) {  // 0, 1, 2, 3, 4, 5
+  console.log(i)
+
+  i++
+}
+
+Do While Loop
+let text = ""
+let i = 0;
+
+do {
+  text += "The number is " + i;
+  i++;
+}
+while (i < 10);
+```
+
+Go
+```
+For Index Loop
+--------------
+for i := 0; i <= 5; i++ { // 0,1,2,3,4,5
+	fmt.Print(i)
+}
+
+For Range Loop
+--------------
+numbers := []int{1,2,3,4,5,6}
+
+//With index and value
+for index , num := range numbers{
+	fmt.Print(index,num)
+}
+
+//With value only
+for _ , num := range numbers{
+	fmt.Print(num)
+}
+
+// With Index only
+for index := range numbers{
+	fmt.Print(index)
+}
+
+// With Maps , key and value
+stringnumbers := map[string]int{}
+for key , value := range stringnumbers{
+	fmt.Print(key,value)
+}
+
+//With Value only
+for _ , value := range stringnumbers{
+	fmt.Print(value)
+}
+
+//With Value only
+for key := range stringnumbers{
+	fmt.Print(key)
+}
+
+While Loop
+----------
+i := 0
+for i <= 5 {  // 0,1,2,3,4,5
+	fmt.Print(i)
+	i++
+}
+```
+
+C#
+```
+var numbers = new List<int>{1,2,3,4,5,6}
+For Index Loop
+for(var i = 0;i < numbers.Length;i++)
+{
+	Console.WriteLine(i)
+}
+
+ForEach
+foreach(var e in numbers)
+{
+	Console.WriteLine(e)
+}
+```
+## 
+Switch
+---
+
+Js
+```
+const value = 'b'
+
+switch(value) {
+  case 'a':
+    console.log('A')
+    break
+  case 'b':
+    console.log('B')
+    break
+  case 'c':
+    console.log('C')
+    break
+  default:
+    console.log('first default')
+}
+Prints "B"
+```
+
+Go
+```
+value := "b"
+switch value {
+	case "a":
+		fmt.Println("A")
+	case "b":
+		fmt.Println("B")
+	case "c":
+		fmt.Println("C")
+	default:
+		fmt.Println("first default")
+}
+
+Prints "B"
+```
+
+C#
+```
+var val = "b";
+switch(value) {
+  case "a":
+    console.log("A")
+    break
+  case "b":
+    console.log("B")
+    break
+  case "c":
+    console.log("C")
+    break
+  default:
+    console.log('first default')
+}
+Prints "B"
+```
+
+## 
+String/Int Conversion
+---
+
+Js
+```
+String to Integer
+
+Number function
+var x = Number("1000") // x = 1000
+
+parseInt
+var x = parseInt("1000", 10); // x = 1000
+
+parseFloat
+var x = Math.floor(parseFloat("1000.01")) // x = 1000
+
+Floor
+var x = Math.floor("1000.01"); // x = 1000
+
+Round
+var x = Math.round("1000") // x = 1000
+
+Unary plus
+var x = +"1000"; // x = 1000
+
+Integer to string
+let num = 15;
+let text = num.toString();
+```
+
+Go
+```
+import "strconv"
+
+String to Integer
+ str := "34"
+  n , err := strconv.Atoi(str)
+  if err != nil{
+	fmt.Println(err)
+  }
+  else{
+	fmt.Println(n)
+  }
+
+Integer to String
+i := 6
+strconv.Itoa(i) // 6
+```
+
+## 
+Template Strings
+---
+
+Js
+```
+let text = `Hello World!`;
+
+Quotes Inside Strings
+let text = `He's often called "Johnny"`;
+
+Multiline Strings
+let text =
+`The quick
+brown fox
+jumps over
+the lazy dog`;
+
+Interpolation
+let text = `Welcome ${firstName}, ${lastName}!`;
+
+Expression Substitution
+let price = 10;
+let VAT = 0.25;
+
+let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+
+Concatenate with +
+let text = "cat" + "dog"
+```
+
+Go
+```
+text := `Hello World!`
+
+Quotes Inside Strings
+text := `He's often called "Johnny"`
+
+Multiline Strings
+str := `This is a
+multiline
+string.`
+
+Concatenate with +
+text := "cat" + "dog"
+```
+
+C#
+```
+var text = `Hello World!`;
+
+Quotes Inside Strings
+var text = `He's often called "Johnny"`;
+
+Multiline Strings
+var str = `This is a
+multiline
+string.`;
+
+Interpolation
+string name = $"My full name is: {firstName} {lastName}";
+
+Concatenate with +
+var text = "cat" + "dog";
+```
+
