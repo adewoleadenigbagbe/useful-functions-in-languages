@@ -835,3 +835,262 @@ int b = 2;
 (a, b) = (b, a);
 ```
 
+###
+Json
+---
+
+Js
+```
+let jsonstr = '{"foo":"bar"}'
+let parsed = JSON.parse(jsonstr)
+console.log(parsed)
+
+jsonstr = JSON.stringify(parsed)
+console.log(jsonstr)
+```
+
+Go
+```
+import "encoding/json"
+
+type T struct {
+	Foo string `json:"foo"`
+}
+
+func main() {
+	jsonstr := `{"foo":"bar"}`
+
+	t := new(T)
+	err := json.Unmarshal([]byte(jsonstr), t)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(t)
+
+	marshalled, err := json.Marshal(t)
+	jsonstr = string(marshalled)
+	fmt.Println(jsonstr)
+}
+```
+
+
+C#
+```
+using Newtonsoft
+
+public class MyData
+{
+}
+var jsonString = JsonConvert.SerializeObject(obj);
+MyData tmp = JsonConvert.DeserializeObject<MyData>(json);
+```
+
+###
+Conversion of Primitive Data types to Bytes and vice versa
+---
+
+Js
+```
+Use the following APIs
+----------------------
+ArrayBuffer
+DataView
+Uint8Array
+Int16Array
+TextEncoder
+TextDecoder
+```
+
+Go
+```
+Use the following APIs
+----------------------
+import(
+	"bytes"
+	"encoding/binary"
+)
+binary.Read()
+binary.Write
+bytes.Buffer
+encoding/base64
+encoding/base32
+```
+
+C#
+```
+Use the following APIs
+----------------------
+BitConverter
+BinaryReader 
+BinaryWriter
+Encoding.UTF8
+MemoryStream
+```
+
+
+###
+HttpCalls
+---
+
+Js
+```
+GET
+---
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then(response => response.json()) // Parse JSON from the response
+  .then(data => console.log(data))    // Handle the data
+  .catch(error => console.error('Error:', error)); // Handle errors
+
+POST
+----
+fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    title: 'foo',
+    body: 'bar',
+    userId: 1,
+  }),
+})
+  .then(response => response.json())  // Parse JSON from the response
+  .then(data => console.log(data))    // Handle the data
+  .catch(error => console.error('Error:', error)); // Handle errors
+
+```
+
+Go
+```
+GET
+---
+func main() {
+	// Make a GET request
+	resp, err := http.Get("https://jsonplaceholder.typicode.com/posts/1")
+	if err != nil {
+		log.Fatalf("Error making GET request: %v", err)
+	}
+	defer resp.Body.Close()
+
+	// Read the response body
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		log.Fatalf("Error reading response body: %v", err)
+	}
+
+	// Print the response
+	fmt.Println(string(body))
+}
+
+POST
+----
+func main() {
+	// JSON payload to be sent in the POST request
+	data := map[string]interface{}{
+		"title":  "foo",
+		"body":   "bar",
+		"userId": 1,
+	}
+	jsonData, err := json.Marshal(data)
+	if err != nil {
+		log.Fatalf("Error marshalling JSON: %v", err)
+	}
+
+	// Make a POST request
+	resp, err := http.Post("https://jsonplaceholder.typicode.com/posts", "application/json", bytes.NewBuffer(jsonData))
+	if err != nil {
+		log.Fatalf("Error making POST request: %v", err)
+	}
+	defer resp.Body.Close()
+
+	// Read and print the response body
+	var result map[string]interface{}
+	json.NewDecoder(resp.Body).Decode(&result)
+	fmt.Println(result)
+}
+```
+
+C#
+```
+GET
+---
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+class Program
+{
+    static async Task Main(string[] args)
+    {
+        using HttpClient client = new HttpClient();
+        
+        try
+        {
+            // Make a GET request
+            HttpResponseMessage response = await client.GetAsync("https://jsonplaceholder.typicode.com/posts/1");
+            response.EnsureSuccessStatusCode(); // Throw if not a success code.
+
+            // Read the response content as a string
+            string responseBody = await response.Content.ReadAsStringAsync();
+            
+            // Print the response body
+            Console.WriteLine(responseBody);
+        }
+        catch (HttpRequestException e)
+        {
+            Console.WriteLine($"Request error: {e.Message}");
+        }
+    }
+}
+
+
+POST
+---
+using System;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json; // Install via NuGet (Newtonsoft.Json)
+
+class Program
+{
+    static async Task Main(string[] args)
+    {
+        using HttpClient client = new HttpClient();
+
+        // Create the payload
+        var postData = new
+        {
+            title = "foo",
+            body = "bar",
+            userId = 1
+        };
+
+        // Serialize the payload to JSON
+        string json = JsonConvert.SerializeObject(postData);
+
+        // Create the request content using StringContent
+        StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+
+        try
+        {
+            // Make the POST request
+            HttpResponseMessage response = await client.PostAsync("https://jsonplaceholder.typicode.com/posts", content);
+            response.EnsureSuccessStatusCode();
+
+            // Read and print the response body
+            string responseBody = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(responseBody);
+        }
+        catch (HttpRequestException e)
+        {
+            Console.WriteLine($"Request error: {e.Message}");
+        }
+    }
+}
+
+```
+
+
+
